@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace WellDunne
 {
@@ -10,6 +9,13 @@ namespace WellDunne
     {
         static void Main(string[] args)
         {
+            var validOpts = PassphrasePolicy.Default;
+
+            for (int i = 0; i < 1000; ++i)
+            {
+                string pp = PassphraseGenerator.Generate(validOpts);
+                Console.WriteLine(pp);
+            }
         }
     }
 }
